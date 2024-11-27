@@ -12,10 +12,10 @@ jobs:
         arch: [x64, x86]
         ts: [ts, nts]
         exclude:
-          - { os: windows-2019, php: "8.3" }
-          - { os: windows-2019, php: "8.2" }
-          - { os: windows-2019, php: "8.1" }
-          - { os: windows-2019, php: "8.0" }
+          - { os: windows-2019, version: "8.3" }
+          - { os: windows-2019, version: "8.2" }
+          - { os: windows-2019, version: "8.1" }
+          - { os: windows-2019, version: "8.0" }
     runs-on: windows
     steps:
       - name: Checkout pcov
