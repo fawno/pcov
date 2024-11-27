@@ -7,17 +7,10 @@ jobs:
         shell: cmd
     strategy:
       matrix:
-        os: [ windows-2019, windows-2022 ]
         version: ['8.0', '8.1', '8.2', '8.3', '8.4']
         arch: [x64, x86]
         ts: [ts, nts]
-        exclude:
-          - { os: windows-2019, version: "8.4" }
-          - { os: windows-2019, version: "8.3" }
-          - { os: windows-2019, version: "8.2" }
-          - { os: windows-2019, version: "8.1" }
-          - { os: windows-2019, version: "8.0" }
-    runs-on: windows
+    runs-on: windows-2022
     steps:
       - name: Checkout pcov
         uses: actions/checkout@v4
