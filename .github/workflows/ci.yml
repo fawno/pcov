@@ -7,10 +7,10 @@ jobs:
         shell: cmd
     strategy:
       matrix:
-        version: ['8.0', '8.1', '8.2', '8.3']
+        version: ['8.0', '8.1', '8.2', '8.3', '8.4']
         arch: [x64, x86]
         ts: [ts, nts]
-    runs-on: windows-2022
+    runs-on: windows-latest
     steps:
       - name: Checkout pcov
         uses: actions/checkout@v4
@@ -58,13 +58,11 @@ jobs:
           if ('ts' -eq '${{matrix.ts}}') { $artifact_name = $artifact_name + '-ts' }
           if ('nts' -eq '${{matrix.ts}}') { $artifact_name = $artifact_name + '-nts' }
 
-          if ('7.2' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vc15' }
-          if ('7.3' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vc15' }
-          if ('7.4' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vc15' }
           if ('8.0' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vs16' }
           if ('8.1' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vs16' }
           if ('8.2' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vs16' }
           if ('8.3' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vs16' }
+          if ('8.4' -eq '${{matrix.version}}') { $artifact_name = $artifact_name + '-vs17' }
 
           if ('x64' -eq '${{matrix.arch}}') { $artifact_name = $artifact_name + '-x64' }
           if ('x86' -eq '${{matrix.arch}}') { $artifact_name = $artifact_name + '-x86' }
